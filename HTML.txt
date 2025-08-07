@@ -1,0 +1,1689 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Login Modal -->
+<div
+  id="loginModal"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+>
+  <div
+    class="login-form rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl slide-up"
+  >
+    <div class="text-center mb-8">
+      <div
+        class="text-3xl font-bold gradient-bg bg-clip-text text-transparent mb-2"
+      >
+        💅 NailVerse
+      </div>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">歡迎回來</h2>
+      <p class="text-gray-600">登入您的美甲宇宙帳號</p>
+    </div>
+
+    <!-- Login/Register Tabs -->
+    <div class="flex mb-6 bg-gray-100 rounded-lg p-1">
+      <button
+        id="loginTab"
+        class="flex-1 py-2 px-4 rounded-md text-sm font-medium tab-active transition-all"
+      >
+        登入
+      </button>
+      <button
+        id="registerTab"
+        class="flex-1 py-2 px-4 rounded-md text-sm font-medium text-gray-600 hover:text-gray-800 transition-all"
+      >
+        註冊
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2"
+          >電子郵件</label
+        >
+        <input
+          type="email"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          placeholder="請輸入您的電子郵件"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">密碼</label>
+        <input
+          type="password"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          placeholder="請輸入密碼"
+          required
+        />
+      </div>
+      <div class="flex items-center justify-between">
+        <label class="flex items-center">
+          <input
+            type="checkbox"
+            class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+          />
+          <span class="ml-2 text-sm text-gray-600">記住我</span>
+        </label>
+        <a href="#" class="text-sm text-purple-600 hover:text-purple-800"
+          >忘記密碼？</a
+        >
+      </div>
+      <button
+        type="submit"
+        class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        登入
+      </button>
+    </form>
+
+    <!-- Register Form (Hidden initially) -->
+    <form id="registerForm" class="space-y-4 hidden">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2"
+            >姓名</label
+          >
+          <input
+            type="text"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            placeholder="您的姓名"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2"
+            >手機號碼</label
+          >
+          <input
+            type="tel"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            placeholder="手機號碼"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2"
+          >電子郵件</label
+        >
+        <input
+          type="email"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          placeholder="請輸入電子郵件"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">密碼</label>
+        <input
+          type="password"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          placeholder="設定密碼"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2"
+          >確認密碼</label
+        >
+        <input
+          type="password"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          placeholder="再次輸入密碼"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2"
+          >身份類型</label
+        >
+        <select
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          required
+        >
+          <option value="">請選擇身份類型</option>
+          <option>美甲師</option>
+          <option>設計師</option>
+          <option>美甲店家</option>
+          <option>個人用戶</option>
+        </select>
+      </div>
+      <label class="flex items-center">
+        <input
+          type="checkbox"
+          class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+          required
+        />
+        <span class="ml-2 text-sm text-gray-600"
+          >我同意 <a href="#" class="text-purple-600">服務條款</a> 和
+          <a href="#" class="text-purple-600">隱私政策</a></span
+        >
+      </label>
+      <button
+        type="submit"
+        class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        註冊帳號
+      </button>
+    </form>
+
+    <!-- Social Login -->
+    <div class="mt-6">
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+          <span class="px-2 bg-white text-gray-500">或使用以下方式</span>
+        </div>
+      </div>
+      <div class="mt-4 grid grid-cols-2 gap-3">
+        <button
+          class="social-login flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+          data-provider="line"
+        >
+          <span class="text-green-600 mr-2">💬</span>
+          <span class="text-sm font-medium">LINE</span>
+        </button>
+        <button
+          class="social-login flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+          data-provider="apple"
+        >
+          <span class="mr-2">🍎</span>
+          <span class="text-sm font-medium">Apple</span>
+        </button>
+      </div>
+    </div>
+
+    <button
+      id="closeLogin"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+    >
+      <span class="text-2xl">×</span>
+    </button>
+  </div>
+</div>
+
+<!-- Loading Screen -->
+<div
+  id="loadingScreen"
+  class="fixed inset-0 bg-white flex items-center justify-center z-40 hidden"
+>
+  <div class="text-center">
+    <div
+      class="text-4xl font-bold gradient-bg bg-clip-text text-transparent mb-4"
+    >
+      💅 NailVerse
+    </div>
+    <div
+      class="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"
+    ></div>
+    <p class="text-gray-600">正在載入您的會員中心...</p>
+  </div>
+</div>
+
+<!-- Main Dashboard -->
+<div id="dashboard" class="hidden fade-in">
+  <!-- Top Navigation -->
+  <nav class="bg-white shadow-sm border-b sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <div
+            class="text-2xl font-bold gradient-bg bg-clip-text text-transparent mr-8"
+          >
+            💅 NailVerse
+          </div>
+          <div class="hidden md:flex space-x-6">
+            <a href="#" class="text-purple-600 font-medium">會員中心</a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-800 transition-colors"
+              >圖庫瀏覽</a
+            >
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-800 transition-colors"
+              >最新消息</a
+            >
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-800 transition-colors"
+              >設計師專區</a
+            >
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <div class="hidden md:block relative">
+            <input
+              type="text"
+              placeholder="搜尋設計..."
+              class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+            />
+            <span class="absolute left-3 top-2.5 text-gray-400">🔍</span>
+          </div>
+
+          <!-- Notifications -->
+          <div class="relative">
+            <button
+              id="notificationBtn"
+              class="p-2 text-gray-600 hover:text-gray-800 relative"
+            >
+              <span class="text-xl">🔔</span>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >3</span
+              >
+            </button>
+
+            <!-- Notification Dropdown -->
+            <div
+              id="notificationDropdown"
+              class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border hidden z-50"
+            >
+              <div class="p-4 border-b">
+                <h3 class="font-semibold text-gray-800">通知</h3>
+              </div>
+              <div class="max-h-96 overflow-y-auto">
+                <div class="p-4 border-b hover:bg-gray-50">
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-blue-600 text-sm">🎨</span>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-gray-800">
+                        新設計上架
+                      </p>
+                      <p class="text-xs text-gray-500">
+                        「夢幻星空」系列已上架
+                      </p>
+                      <p class="text-xs text-gray-400">2 小時前</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 border-b hover:bg-gray-50">
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-green-600 text-sm">💳</span>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-gray-800">付款成功</p>
+                      <p class="text-xs text-gray-500">Pro 方案續約成功</p>
+                      <p class="text-xs text-gray-400">1 天前</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 hover:bg-gray-50">
+                  <div class="flex items-start space-x-3">
+                    <div
+                      class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-yellow-600 text-sm">⚡</span>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-sm font-medium text-gray-800">限時優惠</p>
+                      <p class="text-xs text-gray-500">Premium 方案 7 折優惠</p>
+                      <p class="text-xs text-gray-400">3 天前</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 border-t text-center">
+                <button
+                  class="text-purple-600 hover:text-purple-700 text-sm font-medium"
+                >
+                  查看全部通知
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Menu -->
+          <div class="relative">
+            <button
+              id="userMenuBtn"
+              class="flex items-center space-x-3 hover:bg-gray-50 rounded-lg p-2 transition-colors"
+            >
+              <div
+                class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center"
+              >
+                <span id="userAvatar" class="text-purple-600 font-semibold"
+                  >王</span
+                >
+              </div>
+              <div class="hidden md:block text-left">
+                <p id="userName" class="text-sm font-medium text-gray-800">
+                  王小美
+                </p>
+                <p id="userPlan" class="text-xs text-gray-500">Pro 會員</p>
+              </div>
+              <span class="text-gray-400">▼</span>
+            </button>
+
+            <!-- User Dropdown -->
+            <div
+              id="userDropdown"
+              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border hidden z-50"
+            >
+              <div class="p-2">
+                <button
+                  class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
+                >
+                  個人資料
+                </button>
+                <button
+                  class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
+                >
+                  帳戶設定
+                </button>
+                <button
+                  class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
+                >
+                  訂閱管理
+                </button>
+                <hr class="my-2" />
+                <button
+                  class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg"
+                >
+                  幫助中心
+                </button>
+                <button
+                  id="logoutBtn"
+                  class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg"
+                >
+                  登出
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid lg:grid-cols-4 gap-8">
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-xl shadow-sm p-6 sticky top-24">
+          <div class="text-center mb-6">
+            <div
+              class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-purple-600 text-2xl font-bold">王</span>
+            </div>
+            <h3 class="font-semibold text-gray-800">王小美</h3>
+            <p class="text-sm text-gray-500">美甲師</p>
+            <div
+              class="mt-2 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800"
+            >
+              🌿 Pro 會員
+            </div>
+          </div>
+
+          <nav class="space-y-2">
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg bg-purple-50 text-purple-600 font-medium transition-all"
+              data-tab="overview"
+            >
+              📊 總覽
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="subscription"
+            >
+              💳 訂閱管理
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="downloads"
+            >
+              📥 下載記錄
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="favorites"
+            >
+              ❤️ 我的收藏
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="cart"
+            >
+              🛒 列印清單
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="profile"
+            >
+              👤 個人資料
+            </button>
+            <button
+              class="dashboard-tab w-full text-left px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all"
+              data-tab="billing"
+            >
+              🧾 帳單記錄
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="lg:col-span-3">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">會員總覽</h1>
+            <p class="text-gray-600">
+              歡迎回來，王小美！查看您的帳戶狀態和最新活動
+            </p>
+          </div>
+
+          <!-- Welcome Banner -->
+          <div class="gradient-bg rounded-xl p-6 text-white mb-8">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="text-2xl font-bold mb-2">歡迎回來！</h2>
+                <p class="opacity-90">您的 Pro 會員將於 2024/12/15 到期</p>
+                <p class="text-sm opacity-75">還有 27 天</p>
+              </div>
+              <div class="text-6xl opacity-20">💅</div>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-1">本月下載</p>
+                  <p class="text-2xl font-bold text-gray-800">
+                    23<span class="text-sm text-gray-500">/50</span>
+                  </p>
+                </div>
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-2xl">📥</span>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="progress-bar h-2 rounded-full"
+                    style="width: 46%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">還可下載 27 張</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-1">收藏設計</p>
+                  <p class="text-2xl font-bold text-gray-800">156</p>
+                </div>
+                <div
+                  class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-2xl">❤️</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-4">+12 本週新增</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600 mb-1">會員到期</p>
+                  <p class="text-lg font-bold text-gray-800">2024/12/15</p>
+                </div>
+                <div
+                  class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-2xl">⏰</span>
+                </div>
+              </div>
+              <p class="text-xs text-green-600 mt-4">自動續約已開啟</p>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">最近活動</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-blue-600">📥</span>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-800">
+                    下載了「櫻花漸層」設計
+                  </p>
+                  <p class="text-xs text-gray-500">2 小時前</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-pink-600">❤️</span>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-800">
+                    收藏了「夢幻星空」設計
+                  </p>
+                  <p class="text-xs text-gray-500">1 天前</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-green-600">💳</span>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-800">
+                    Pro 方案續約成功
+                  </p>
+                  <p class="text-xs text-gray-500">3 天前</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">快速操作</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <button
+                class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <span class="text-2xl">🎨</span>
+                <div class="text-left">
+                  <p class="font-medium text-gray-800">瀏覽新設計</p>
+                  <p class="text-sm text-gray-500">查看最新上架的設計</p>
+                </div>
+              </button>
+              <button
+                class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <span class="text-2xl">🛒</span>
+                <div class="text-left">
+                  <p class="font-medium text-gray-800">管理列印清單</p>
+                  <p class="text-sm text-gray-500">查看待列印的設計</p>
+                </div>
+              </button>
+              <button
+                class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <span class="text-2xl">⭐</span>
+                <div class="text-left">
+                  <p class="font-medium text-gray-800">升級方案</p>
+                  <p class="text-sm text-gray-500">解鎖更多設計和功能</p>
+                </div>
+              </button>
+              <button
+                class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <span class="text-2xl">📊</span>
+                <div class="text-left">
+                  <p class="font-medium text-gray-800">使用統計</p>
+                  <p class="text-sm text-gray-500">查看詳細使用報告</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscription Tab -->
+        <div id="subscription" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">訂閱管理</h1>
+            <p class="text-gray-600">管理您的訂閱方案和付款設定</p>
+          </div>
+
+          <!-- Current Plan -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-gray-800">目前方案</h3>
+              <div
+                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800"
+              >
+                🌿 Pro 會員
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <div class="space-y-4">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">月費</span>
+                    <span class="font-semibold">NT$399</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">下一次扣款</span>
+                    <span class="font-semibold">2024/12/15</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">自動續約</span>
+                    <span class="text-green-600 font-semibold">已開啟</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">付款方式</span>
+                    <span class="font-semibold">信用卡 ****1234</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-medium text-gray-800 mb-3">方案權益</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>每月 50 張下載
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span
+                    >插畫風/花卉/角色設計
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>高解析度圖檔
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>優先客服支援
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>設計師專屬內容
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mt-6 pt-6 border-t">
+              <button
+                class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                升級方案
+              </button>
+              <button
+                class="border border-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                更改付款方式
+              </button>
+              <button
+                class="text-red-600 hover:text-red-700 px-6 py-2 transition-colors"
+              >
+                取消訂閱
+              </button>
+            </div>
+          </div>
+
+          <!-- Plan Comparison -->
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-6">方案比較</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="border border-gray-200 rounded-lg p-6">
+                <div class="text-center mb-4">
+                  <div class="text-2xl mb-2">🌱</div>
+                  <h4 class="font-semibold text-gray-800">Basic</h4>
+                  <div class="text-2xl font-bold text-purple-600 mt-2">
+                    NT$199<span class="text-sm text-gray-500">/月</span>
+                  </div>
+                </div>
+                <ul class="space-y-2 text-sm mb-6">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>20 張/月
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>基礎設計
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>標準解析度
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-gray-400 mr-2">✗</span>進階設計
+                  </li>
+                </ul>
+                <button
+                  class="w-full border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  降級至此方案
+                </button>
+              </div>
+
+              <div
+                class="border-2 border-purple-300 rounded-lg p-6 bg-purple-50 relative"
+              >
+                <div
+                  class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-3 py-1 rounded-full text-xs"
+                >
+                  目前方案
+                </div>
+                <div class="text-center mb-4">
+                  <div class="text-2xl mb-2">🌿</div>
+                  <h4 class="font-semibold text-gray-800">Pro</h4>
+                  <div class="text-2xl font-bold text-purple-600 mt-2">
+                    NT$399<span class="text-sm text-gray-500">/月</span>
+                  </div>
+                </div>
+                <ul class="space-y-2 text-sm mb-6">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>50 張/月
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>進階設計
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>高解析度
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>優先支援
+                  </li>
+                </ul>
+                <button
+                  class="w-full bg-purple-600 text-white py-2 rounded-lg opacity-50 cursor-not-allowed"
+                >
+                  目前方案
+                </button>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-6 relative">
+                <div
+                  class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs"
+                >
+                  推薦
+                </div>
+                <div class="text-center mb-4">
+                  <div class="text-2xl mb-2">🌸</div>
+                  <h4 class="font-semibold text-gray-800">Premium</h4>
+                  <div class="text-2xl font-bold text-purple-600 mt-2">
+                    NT$999<span class="text-sm text-gray-500">/月</span>
+                  </div>
+                </div>
+                <ul class="space-y-2 text-sm mb-6">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>無限下載
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>所有設計
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>AI 高解析
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>24/7 客服
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>商業授權
+                  </li>
+                </ul>
+                <button
+                  class="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition-colors"
+                >
+                  升級至此方案
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downloads Tab -->
+        <div id="downloads" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">下載記錄</h1>
+            <p class="text-gray-600">查看您的所有下載歷史和使用統計</p>
+          </div>
+
+          <!-- Download Stats -->
+          <div class="grid md:grid-cols-4 gap-6 mb-8">
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 text-center card-hover"
+            >
+              <div class="text-2xl font-bold text-purple-600 mb-1">156</div>
+              <div class="text-sm text-gray-600">總下載數</div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 text-center card-hover"
+            >
+              <div class="text-2xl font-bold text-blue-600 mb-1">23</div>
+              <div class="text-sm text-gray-600">本月下載</div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 text-center card-hover"
+            >
+              <div class="text-2xl font-bold text-green-600 mb-1">27</div>
+              <div class="text-sm text-gray-600">剩餘額度</div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 text-center card-hover"
+            >
+              <div class="text-2xl font-bold text-orange-600 mb-1">12</div>
+              <div class="text-sm text-gray-600">本週下載</div>
+            </div>
+          </div>
+
+          <!-- Filter and Search -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <div class="flex flex-wrap gap-4 items-center">
+              <div class="flex-1 min-w-64">
+                <input
+                  type="text"
+                  placeholder="搜尋設計名稱或設計師..."
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+              </div>
+              <select
+                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              >
+                <option>所有類型</option>
+                <option>幾何圖案</option>
+                <option>花卉風格</option>
+                <option>節慶主題</option>
+                <option>角色設計</option>
+              </select>
+              <select
+                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              >
+                <option>最近下載</option>
+                <option>下載次數</option>
+                <option>設計師</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Download History -->
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-gray-800">下載歷史</h3>
+            </div>
+            <div class="divide-y">
+              <div class="p-6 flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-pink-300 to-purple-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">櫻花漸層</h4>
+                  <p class="text-sm text-gray-500">by 設計師A • 花卉風格</p>
+                  <p class="text-xs text-gray-400">2024/11/15 14:30</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="download-btn text-purple-600 hover:text-purple-700 text-sm px-3 py-1 border border-purple-200 rounded-lg hover:bg-purple-50 transition-colors"
+                  >
+                    重新下載
+                  </button>
+                  <button
+                    class="favorite-btn text-gray-400 hover:text-red-500 transition-colors"
+                  >
+                    ❤️
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-blue-300 to-teal-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">海洋波紋</h4>
+                  <p class="text-sm text-gray-500">by 設計師B • 幾何圖案</p>
+                  <p class="text-xs text-gray-400">2024/11/14 09:15</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="download-btn text-purple-600 hover:text-purple-700 text-sm px-3 py-1 border border-purple-200 rounded-lg hover:bg-purple-50 transition-colors"
+                  >
+                    重新下載
+                  </button>
+                  <button
+                    class="favorite-btn text-red-500 hover:text-gray-400 transition-colors"
+                  >
+                    ❤️
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">夕陽幾何</h4>
+                  <p class="text-sm text-gray-500">by 設計師C • 幾何圖案</p>
+                  <p class="text-xs text-gray-400">2024/11/13 16:45</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="download-btn text-purple-600 hover:text-purple-700 text-sm px-3 py-1 border border-purple-200 rounded-lg hover:bg-purple-50 transition-colors"
+                  >
+                    重新下載
+                  </button>
+                  <button
+                    class="favorite-btn text-gray-400 hover:text-red-500 transition-colors"
+                  >
+                    ❤️
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 border-t text-center">
+              <button class="text-purple-600 hover:text-purple-700 font-medium">
+                載入更多記錄
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Favorites Tab -->
+        <div id="favorites" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">我的收藏</h1>
+            <p class="text-gray-600">管理您喜愛的設計，隨時下載使用</p>
+          </div>
+
+          <!-- Favorites Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-pink-300 to-purple-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-yellow-400 text-xs px-2 py-1 rounded-full font-semibold"
+                >
+                  PRO
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">櫻花漸層</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師A</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="download-btn flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    下載
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-blue-300 to-teal-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-green-400 text-xs px-2 py-1 rounded-full font-semibold"
+                >
+                  BASIC
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">海洋波紋</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師B</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="download-btn flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    下載
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-purple-300 to-pink-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-purple-400 text-xs px-2 py-1 rounded-full font-semibold text-white"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">夢幻星空</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師E</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="flex-1 bg-gray-400 text-white py-2 px-4 rounded-lg text-sm cursor-not-allowed"
+                  >
+                    需升級
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-green-300 to-blue-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-green-400 text-xs px-2 py-1 rounded-full font-semibold"
+                >
+                  BASIC
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">森林系列</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師D</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="download-btn flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    下載
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-red-300 to-pink-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-yellow-400 text-xs px-2 py-1 rounded-full font-semibold"
+                >
+                  PRO
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">玫瑰金系列</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師F</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="download-btn flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    下載
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl shadow-sm overflow-hidden card-hover"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-indigo-300 to-purple-400 relative"
+              >
+                <button
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors"
+                >
+                  ❤️
+                </button>
+                <div
+                  class="absolute top-3 left-3 bg-yellow-400 text-xs px-2 py-1 rounded-full font-semibold"
+                >
+                  PRO
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-medium text-gray-800 mb-1">銀河系列</h4>
+                <p class="text-sm text-gray-500 mb-3">by 設計師G</p>
+                <div class="flex space-x-2">
+                  <button
+                    class="download-btn flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    下載
+                  </button>
+                  <button
+                    class="px-3 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    🛒
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Tab -->
+        <div id="cart" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">列印清單</h1>
+            <p class="text-gray-600">管理待列印的設計，一鍵發送到打印機</p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-gray-800">
+                待列印項目 (3)
+              </h3>
+              <button
+                class="print-btn bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                🖨️ 全部列印
+              </button>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-pink-300 to-purple-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">櫻花漸層</h4>
+                  <p class="text-sm text-gray-500">by 設計師A</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="print-btn bg-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    列印
+                  </button>
+                  <button
+                    class="text-red-500 hover:text-red-700 transition-colors"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-blue-300 to-teal-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">海洋波紋</h4>
+                  <p class="text-sm text-gray-500">by 設計師B</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="print-btn bg-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    列印
+                  </button>
+                  <button
+                    class="text-red-500 hover:text-red-700 transition-colors"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg"
+              >
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-lg"
+                ></div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">夕陽幾何</h4>
+                  <p class="text-sm text-gray-500">by 設計師C</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="print-btn bg-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                  >
+                    列印
+                  </button>
+                  <button
+                    class="text-red-500 hover:text-red-700 transition-colors"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+              <div class="flex items-center space-x-3">
+                <span class="text-blue-600 text-xl">ℹ️</span>
+                <div>
+                  <p class="text-sm font-medium text-blue-800">
+                    打印機連接狀態
+                  </p>
+                  <p class="text-xs text-blue-600">
+                    NailVerse Pro Printer - 已連接 ✅
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Tab -->
+        <div id="profile" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">個人資料</h1>
+            <p class="text-gray-600">管理您的帳戶資訊和偏好設定</p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Basic Info -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-6">基本資料</h3>
+              <form class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >姓名</label
+                  >
+                  <input
+                    type="text"
+                    value="王小美"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >電子郵件</label
+                  >
+                  <input
+                    type="email"
+                    value="wang@example.com"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >手機號碼</label
+                  >
+                  <input
+                    type="tel"
+                    value="0912-345-678"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >身份類型</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  >
+                    <option selected>美甲師</option>
+                    <option>設計師</option>
+                    <option>美甲店家</option>
+                    <option>個人用戶</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  更新資料
+                </button>
+              </form>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-6">安全設定</h3>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-medium text-gray-800 mb-3">更改密碼</h4>
+                  <form class="space-y-3">
+                    <input
+                      type="password"
+                      placeholder="目前密碼"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                    <input
+                      type="password"
+                      placeholder="新密碼"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                    <input
+                      type="password"
+                      placeholder="確認新密碼"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      class="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-colors"
+                    >
+                      更新密碼
+                    </button>
+                  </form>
+                </div>
+
+                <div class="border-t pt-6">
+                  <h4 class="font-medium text-gray-800 mb-3">兩步驟驗證</h4>
+                  <div
+                    class="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+                  >
+                    <div>
+                      <p class="font-medium text-gray-800">SMS 驗證</p>
+                      <p class="text-sm text-gray-500">
+                        透過手機簡訊接收驗證碼
+                      </p>
+                    </div>
+                    <button
+                      class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm"
+                    >
+                      已啟用
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mt-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-6">偏好設定</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-medium text-gray-800 mb-4">通知設定</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span class="ml-3 text-sm text-gray-700"
+                      >新設計上架通知</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span class="ml-3 text-sm text-gray-700">訂閱到期提醒</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span class="ml-3 text-sm text-gray-700">促銷活動通知</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span class="ml-3 text-sm text-gray-700"
+                      >設計師動態通知</span
+                    >
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-4">下載偏好</h4>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >預設解析度</label
+                    >
+                    <select
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                      <option>高解析度 (300 DPI)</option>
+                      <option>標準解析度 (150 DPI)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >檔案格式</label
+                    >
+                    <select
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                      <option>PNG</option>
+                      <option>JPG</option>
+                      <option>SVG</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >自動加入列印清單</label
+                    >
+                    <select
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing Tab -->
+        <div id="billing" class="tab-content hidden">
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">帳單記錄</h1>
+            <p class="text-gray-600">查看您的付款歷史和發票</p>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-gray-800">付款方式</h3>
+              <button class="text-purple-600 hover:text-purple-700 font-medium">
+                + 新增付款方式
+              </button>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 border border-gray-200 rounded-lg"
+              >
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-8 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold"
+                  >
+                    VISA
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-800">**** **** **** 1234</p>
+                    <p class="text-sm text-gray-500">到期日: 12/26</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                    >預設</span
+                  >
+                  <button class="text-gray-400 hover:text-gray-600">
+                    編輯
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border border-gray-200 rounded-lg"
+              >
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-8 bg-red-600 rounded flex items-center justify-center text-white text-xs font-bold"
+                  >
+                    MC
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-800">**** **** **** 5678</p>
+                    <p class="text-sm text-gray-500">到期日: 08/25</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button class="text-purple-600 hover:text-purple-700 text-sm">
+                    設為預設
+                  </button>
+                  <button class="text-gray-400 hover:text-gray-600">
+                    編輯
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing History -->
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-gray-800">帳單歷史</h3>
+            </div>
+            <div class="divide-y">
+              <div class="p-6 flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800">Pro 方案 - 11月</p>
+                  <p class="text-sm text-gray-500">2024/11/15 • 自動續約</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-semibold text-gray-800">NT$399</p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                      >已付款</span
+                    >
+                    <button
+                      class="text-purple-600 hover:text-purple-700 text-sm"
+                    >
+                      下載發票
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800">Pro 方案 - 10月</p>
+                  <p class="text-sm text-gray-500">2024/10/15 • 自動續約</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-semibold text-gray-800">NT$399</p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                      >已付款</span
+                    >
+                    <button
+                      class="text-purple-600 hover:text-purple-700 text-sm"
+                    >
+                      下載發票
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800">額外點數包 (10張)</p>
+                  <p class="text-sm text-gray-500">2024/10/08 • 一次性購買</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-semibold text-gray-800">NT$99</p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                      >已付款</span
+                    >
+                    <button
+                      class="text-purple-600 hover:text-purple-700 text-sm"
+                    >
+                      下載發票
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800">Pro 方案 - 9月</p>
+                  <p class="text-sm text-gray-500">2024/09/15 • 自動續約</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-semibold text-gray-800">NT$399</p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                      >已付款</span
+                    >
+                    <button
+                      class="text-purple-600 hover:text-purple-700 text-sm"
+                    >
+                      下載發票
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 border-t text-center">
+              <button class="text-purple-600 hover:text-purple-700 font-medium">
+                載入更多記錄
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
